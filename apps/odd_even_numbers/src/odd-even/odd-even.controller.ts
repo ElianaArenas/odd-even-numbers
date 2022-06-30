@@ -16,13 +16,13 @@ export class OddEvenController {
   handleEvents(@Payload() data: any) {
     //data is added while the numbers array has 10 elements
     this.numbers.push(data);
-    
+  
     if (this.numbers.length === 10) {
 
       for (const element of this.numbers) {
 
         let body: CommonDTO = {...element, createdAt: new Date() };
-
+        
         //Create an odd or even document 
         element.type === 'odd' ? this.oddService.create(body)
          : this.evenService.create(body);

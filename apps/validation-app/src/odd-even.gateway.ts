@@ -12,7 +12,7 @@ export class OddEvenGateway implements OnGatewayInit, OnGatewayInit, OnGatewayDi
   @WebSocketServer() server: Server;
 
   afterInit() {
-    console.log('Socket initialized 🚀');
+    console.log('Socket initialized 🚀');    
   }
 
   handleConnection(client: any) {
@@ -28,7 +28,7 @@ export class OddEvenGateway implements OnGatewayInit, OnGatewayInit, OnGatewayDi
    * 
    * @param {INumberType} numberType
    */
-  sendNumbers(numberType:INumberType) {
+  sendNumbers(numberType:INumberType) {    
     this.server.emit("sendNumbers", numberType);
   }
 

@@ -22,10 +22,9 @@ export class OddEvenService {
    * @param createOddDTO 
    * @returns {Promise<Odd>} a promise with the document created
    */
-  async create(createOddDTO: CreateOddDTO) {
+  async create(createOddDTO: CreateOddDTO): Promise<Odd> {
     const newOddNumber = new this.oddModel(createOddDTO);
- 
-    console.log(await newOddNumber.save());
+    return await newOddNumber.save();
   }
 
 }

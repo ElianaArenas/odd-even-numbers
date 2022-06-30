@@ -21,7 +21,7 @@ export class SocketIoClientStrategy extends Server implements CustomTransportStr
     });
 
     this.messageHandlers.forEach((handler, pattern) => {
-      this.client.on(pattern, (data: any) => {
+      this.client.on(pattern, (data: any) => {  
         handler(data, this.client);
       });
     });

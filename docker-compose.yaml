@@ -1,26 +1,27 @@
 services:
-   oddEven:
-     container_name: oddevenapp
-     restart: always
-     build: 
-      dockerfile: ./apps/odd_even_numbers/Dockerfile
-     env_file:
-      - ./apps/odd_even_numbers/.env
-     ports:
-         - "3000:3000"
-     links:
-       - "mongo"
    validation:
      container_name: validationapp
      restart: always
      build: 
+      context: .
       dockerfile: ./apps/validation-app/Dockerfile
      env_file:
       - ./apps/validation-app/.env
      ports:
+         - "3000:3000"
+   oddeven:
+     container_name: oddevenapp
+     restart: always
+     build: 
+      context: .
+      dockerfile: ./apps/odd_even_numbers/Dockerfile
+     env_file:
+      - ./apps/odd_even_numbers/.env
+     ports:
          - "3001:3001"
      links:
-       - "mongo"
+       - "validation"
+       - "mongo"  
    mongo:
     container_name: mongodatabase
     image: mongo

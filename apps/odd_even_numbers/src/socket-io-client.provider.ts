@@ -7,7 +7,7 @@ export class SocketIoClientProvider {
   private socket: Socket;
 
   private connect() {
-    this.socket = io(process.env.SOCKET);
+    this.socket = io(process.env.SOCKET);    
     return this.socket;
   }
 
