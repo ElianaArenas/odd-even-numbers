@@ -1,7 +1,7 @@
 
 ## Description
 
-Monorepo project with Nest.js framework using NPM.
+Monorepo project with [Nest.js](https://nestjs.com/) framework using NPM.
 
 The source code contains an microservice that will receive and validate if a number is odd or even, and forward this request to another microservice to save those numbers into a MongoDB database via websocket.
 
