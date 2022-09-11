@@ -25,16 +25,18 @@ We have 2 packages inside the project:
 $ npm install
 ```
 
-## Running the app
+## Running the apps
 
 ```bash
 # development
-$ npm run start
+$ npm run start validation-app
+$ npm run start odd_even_numbers
 
 # watch mode
-$ npm run start:dev
-
+$ npm run start:dev validation-app
+$ npm run start:dev odd_even_numbers
 # production mode
-$ npm run start:prod
+$ npm run start:prod validation-app
+$ npm run start:prod odd_even_numbers
 ```
 

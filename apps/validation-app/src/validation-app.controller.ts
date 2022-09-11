@@ -14,13 +14,13 @@ export class ValidationAppController {
     private readonly oddEvenGateway: OddEvenGateway
     ) { }
 
-  @Post()
-  oddOrEven(@Body(IsNumberPipe, IsOddOrEvenPipe) bodyDto: NumberDto): string {
+  @Post('sendNumber')
+  oddOrEven(@Body(IsNumberPipe, IsOddOrEvenPipe) bodyDto: NumberDto): INumberType {
     
     //Send the validation to the client microservice
     this.oddEvenGateway.sendNumbers(bodyDto as INumberType);
 
-    return 'The number was sent'
+    return bodyDto as INumberType;
   }
 
 

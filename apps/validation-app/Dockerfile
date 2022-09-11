@@ -1,6 +1,4 @@
-FROM node:16
-
-RUN mkdir -p /usr/src/app
+FROM node:16-alpine
 
 WORKDIR /usr/src/app
 
@@ -10,4 +8,6 @@ RUN npm install
 
 COPY . .
 
-CMD ["npm", "start validation-app"]
+RUN npm run build validation-app 
+
+CMD ["node","dist/apps/validation-app/main"]
