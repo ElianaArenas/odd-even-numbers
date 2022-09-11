@@ -17,8 +17,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: start Test
-        run: |
-          docker pull mongo
-          docker run -d -p 27017:27017 mongo
+        run: docker compose up
       - name: Test
         run: npm test
